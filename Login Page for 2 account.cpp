@@ -1,4 +1,4 @@
-//HALAMAN LOGIN DUA AKUN
+//LOGIN PAGE FOR 2 ACCOUNT
 
 #include<iostream>
 using namespace std;
