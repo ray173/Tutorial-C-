@@ -1,4 +1,4 @@
-DO WHILE LOOP
+//DO WHILE LOOP
 
 #include<iostream>
 using namespace std;
