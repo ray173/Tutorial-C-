@@ -1,7 +1,7 @@
-//OPERATOR LOGIKA
+//OPERATOR LOGIC
 
-#include<iostream>      //operator logika
-using namespace std;   //not = kebalikan
+#include<iostream>
+using namespace std;
 bool output1, output2, output3, output4;           //and = 
 int main(){
     output1 = 2 == 2;
