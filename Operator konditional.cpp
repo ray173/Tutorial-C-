@@ -10,7 +10,7 @@ int main(){
     cin>>a;
     
     b = 59;
-    hasil = a > b;
+    result = a > b;
     string konditional = result == 1 ?"Graduated":"No Graduated";
     cout<<"result = " << konditional <<endl;
 }
