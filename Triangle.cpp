@@ -35,4 +35,16 @@ int main(){
         cout<<endl;
     }
     
+    cout<<"pola 4\n"<<endl;
+    
+    for(int i=1; i<=n; i++){
+        for(int j=n; j>i; j--){
+            cout<<" ";
+        }
+        for(int k=1; k<=i; k++){
+            cout<<"#";
+        }
+        cout<<endl;
+    }
+    
 } 
