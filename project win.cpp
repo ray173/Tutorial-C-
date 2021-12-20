@@ -3,7 +3,7 @@ using namespace std;
 
 int main(){
 	long saldo = 0, jmltf;
-	int setor, tarik;
+	int setor, tarik, pilih_DD;
 	long pilih;
 	char lanjut;
 	exit:
@@ -44,7 +44,8 @@ int main(){
 	cout<<"2.Setor Tunai"<<endl;
 	cout<<"3.Penarikan"<<endl;
 	cout<<"4.Transfer"<<endl;
-	cout<<"5.Exit"<<endl;
+	cout<<"5.Dompet Digital"<<endl;
+	cout<<"6.Exit"<<endl;
 
 	cout<<"================================"<<endl;
 	cout<<endl;
@@ -59,6 +60,8 @@ int main(){
 	switch(pilih){
 		case 1:
 		cout<<"Sisa Saldo Rp."<< saldo<<endl;
+		goto transfer_again;
+
 		break;
 
 		case 2:
@@ -70,7 +73,10 @@ int main(){
 			cout<<endl;
 
 			cout<<"Deposit berhasil"<<endl;
+			cout<<endl;
 			cout<<"Saldo saat ini Rp."<<saldo<<endl;
+			goto transfer_again;
+
 		break;
 
 		case 3:
@@ -109,7 +115,7 @@ int main(){
 			}else{
 				saldo -= jmltf;
 				cout<<endl;
-				cout<<"Transfer senilai Rp."<< jmltf<<" berhasil"<<endl;
+				cout<<"Transfer senilai Rp."<< jmltf<<" berhasil"<<endl;		//nomor rekening : 12345, 123456, 123321, 654321, 111111
 				cout<<"Saldo saat ini Rp."<< saldo<<endl;
 			}
 
@@ -162,14 +168,127 @@ int main(){
 				cout<<"Saldo saat ini Rp."<< saldo<<endl;
 			}
 		}else{
+			cout<<endl;
 			cout<<"Nomor rekening tidak di temukan"<<endl;
 			cout<<endl;
-			system("cls");
-			goto tf;
+			goto transfer_again;
+		}
+		break;
+
+		case 5:
+		cout<<"1.Gopay"<<endl;
+		cout<<"2.OVO"<<endl;
+		cout<<"3.ShopeePay"<<endl;
+		cout<<"4.DANA"<<endl;
+
+		cout<<"Pilih : ";
+		cin>>pilih_DD;
+
+		system("cls");
+
+		long nominal, nomor_tujuan;
+
+		if(pilih_DD == 1){
+			cout<<"Masukkan nomor tujuan";				//nomor tujuan : 12345, 123456, 123321, 654321, 111111
+			cout<<"(+62): ";
+			cin>>nomor_tujuan;
+			if(nomor_tujuan == 12345){
+				cout<<"Nominal : ";
+				cin>>nominal;
+				if(nominal <= saldo){
+					saldo -= nominal;
+
+					cout<<endl;
+
+					cout<<"Top Up sebesar Rp."<<nominal<<" Berhasil"<<endl;
+					cout<<endl;
+					cout<<"Sisa Saldo Anda Rp."<< saldo <<endl;
+
+				}else{
+					cout<<"Maaf saldo anda tidak cukup"<<endl;
+				}
+			}else if(nomor_tujuan == 123456){
+				cout<<"Nominal : ";
+				cin>>nominal;
+				if(nominal <= saldo){
+					saldo -= nominal;
+
+					cout<<endl;
+
+					cout<<"Top Up sebesar Rp."<<nominal<<" Berhasil"<<endl;
+					cout<<endl;
+					cout<<"Sisa Saldo Anda Rp."<< saldo <<endl;
+
+				}else{
+					cout<<"Maaf saldo anda tidak cukup"<<endl;
+				}
+			}else if(nomor_tujuan == 123321){
+				cout<<"Nominal : ";
+				cin>>nominal;
+				if(nominal <= saldo){
+					saldo -= nominal;
+
+					cout<<endl;
+
+					cout<<"Top Up sebesar Rp."<<nominal<<" Berhasil"<<endl;
+					cout<<endl;
+					cout<<"Sisa Saldo Anda Rp."<< saldo <<endl;
+
+				}else{
+					cout<<"Maaf saldo anda tidak cukup"<<endl;
+				}
+			}else if(nomor_tujuan == 654321){
+				cout<<"Nominal : ";
+				cin>>nominal;
+				if(nominal <= saldo){
+					saldo -= nominal;
+
+					cout<<endl;
+
+					cout<<"Top Up sebesar Rp."<<nominal<<" Berhasil"<<endl;
+					cout<<endl;
+					cout<<"Sisa Saldo Anda Rp."<< saldo <<endl;
+
+				}else{
+					cout<<"Maaf saldo anda tidak cukup"<<endl;
+				}
+			}else if(nomor_tujuan == 12345){
+				cout<<"Nominal : ";
+				cin>>nominal;
+				if(nominal <= saldo){
+					saldo -= nominal;
+
+					cout<<endl;
+
+					cout<<"Top Up sebesar Rp."<<nominal<<" Berhasil"<<endl;
+					cout<<endl;
+					cout<<"Sisa Saldo Anda Rp."<< saldo <<endl;
+
+				}else{
+					cout<<"Maaf saldo anda tidak cukup"<<endl;
+				}
+			}else if(nomor_tujuan == 111111){
+				cout<<"Nominal : ";
+				cin>>nominal;
+				if(nominal <= saldo){
+					saldo -= nominal;
+
+					cout<<endl;
+
+					cout<<"Top Up sebesar Rp."<<nominal<<" Berhasil"<<endl;
+					cout<<endl;
+					cout<<"Sisa Saldo Anda Rp."<< saldo <<endl;
+
+				}else{
+					cout<<"Maaf saldo anda tidak cukup"<<endl;
+				}
+			}else{
+				cout<<"Maaf nomor tidak ditemukan"<<endl;
+			}
 		}
 		
 		transfer_again:
-		case 5:
+		case 6:
 		cout<<endl;
 		cout<<"Transaksi Lagi? (y/n) ";
 		cin>>lanjut;
